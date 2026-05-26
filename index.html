@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dzakwan Avie Rahmani | Portofolio Profesional</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <style>
+        /* ============================================
+           VARIABLES & RESET
+        ============================================ */
         :root {
             --primary: #6366f1;
             --primary-dark: #4f46e5;
@@ -43,32 +47,16 @@
             line-height: 1.7;
             min-height: 100vh;
             overflow-x: hidden;
-            position: relative;
-        }
-
-        /* Subtle Background Pattern */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(99,102,241,0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(6,182,212,0.03) 0%, transparent 50%),
-                radial-gradient(circle at 50% 80%, rgba(245,158,11,0.03) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 0;
         }
 
         /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 6px; }
         ::-webkit-scrollbar-track { background: #f1f5f9; }
         ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 3px; }
-        ::-webkit-scrollbar-thumb:hover { background: var(--primary-dark); }
 
-        /* Loading Screen */
+        /* ============================================
+           LOADING SCREEN
+        ============================================ */
         .loader-wrapper {
             position: fixed;
             top: 0; left: 0;
@@ -80,26 +68,19 @@
             z-index: 9999;
             transition: opacity 0.6s ease, visibility 0.6s ease;
         }
-
         .loader-wrapper.hidden {
             opacity: 0;
             visibility: hidden;
         }
-
-        .loader-content {
-            text-align: center;
-        }
-
+        .loader-content { text-align: center; }
         .loader-logo {
             font-size: 3rem;
             font-weight: 800;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             animation: pulse 1.5s ease-in-out infinite;
         }
-
         .loader-bar {
             width: 200px;
             height: 4px;
@@ -108,27 +89,24 @@
             margin: 1rem auto;
             overflow: hidden;
         }
-
         .loader-bar-fill {
             height: 100%;
             background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
-            border-radius: 2px;
             animation: loading 1.8s ease-in-out infinite;
-            width: 0%;
         }
-
         @keyframes loading {
             0% { width: 0%; margin-left: 0; }
             50% { width: 70%; margin-left: 15%; }
             100% { width: 0%; margin-left: 100%; }
         }
-
         @keyframes pulse {
             0%, 100% { opacity: 1; }
             50% { opacity: 0.5; }
         }
 
-        /* Navigation */
+        /* ============================================
+           NAVIGATION
+        ============================================ */
         .navbar {
             position: fixed;
             top: 1rem;
@@ -138,7 +116,6 @@
             max-width: 1100px;
             background: rgba(255,255,255,0.85);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255,255,255,0.6);
             border-radius: 50px;
             padding: 0.8rem 2rem;
@@ -149,12 +126,10 @@
             box-shadow: var(--shadow-lg);
             transition: var(--transition);
         }
-
         .navbar.scrolled {
-            box-shadow: var(--shadow-xl);
             background: rgba(255,255,255,0.95);
+            box-shadow: var(--shadow-xl);
         }
-
         .nav-logo {
             font-size: 1.4rem;
             font-weight: 800;
@@ -162,20 +137,12 @@
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
         }
-
         .nav-links {
             display: flex;
             gap: 0.3rem;
             list-style: none;
-            flex-wrap: wrap;
-            justify-content: center;
         }
-
         .nav-links a {
             color: var(--text);
             text-decoration: none;
@@ -184,25 +151,19 @@
             transition: var(--transition);
             font-weight: 500;
             font-size: 0.9rem;
-            position: relative;
-            white-space: nowrap;
         }
-
         .nav-links a:hover,
         .nav-links a.active {
             background: var(--primary);
             color: white;
         }
-
         .nav-toggle {
             display: none;
             background: none;
             border: none;
             cursor: pointer;
             padding: 0.5rem;
-            z-index: 1001;
         }
-
         .nav-toggle span {
             display: block;
             width: 25px;
@@ -213,31 +174,25 @@
             transition: var(--transition);
         }
 
-        /* Hero Section */
+        /* ============================================
+           HERO SECTION
+        ============================================ */
         .hero {
             padding: 10rem 2rem 6rem;
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
-            z-index: 1;
         }
-
         .hero-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-
-        .hero-text {
-            animation: slideUp 0.8s ease-out;
-        }
-
+        .hero-text { animation: slideUp 0.8s ease-out; }
         @keyframes slideUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
         .hero-badge {
             display: inline-flex;
             align-items: center;
@@ -251,7 +206,6 @@
             color: var(--primary);
             margin-bottom: 1.5rem;
         }
-
         .hero-badge .status-dot {
             width: 8px;
             height: 8px;
@@ -259,73 +213,47 @@
             border-radius: 50%;
             animation: pulse 2s infinite;
         }
-
         .hero-text h1 {
             font-size: 3.8rem;
             font-weight: 800;
             line-height: 1.15;
             margin-bottom: 0.8rem;
-            letter-spacing: -0.02em;
         }
-
-        .hero-text h1 .gradient-text {
+        .gradient-text {
             background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-clip: text;
             background-size: 200% 200%;
             animation: gradientShift 5s ease infinite;
         }
-
         @keyframes gradientShift {
             0%, 100% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
         }
-
         .hero-text .tagline {
             font-size: 1.3rem;
             color: var(--text-light);
             margin-bottom: 2rem;
-            font-weight: 400;
         }
-
         .hero-stats {
             display: flex;
             gap: 2rem;
             margin-top: 2rem;
-            flex-wrap: wrap;
         }
-
-        .stat-item {
-            text-align: center;
-        }
-
         .stat-number {
             font-size: 2.5rem;
             font-weight: 800;
             color: var(--primary);
             line-height: 1;
         }
-
         .stat-label {
             font-size: 0.85rem;
             color: var(--text-light);
-            margin-top: 0.3rem;
         }
-
-        .hero-visual {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            animation: slideUp 1s ease-out;
-        }
-
         .avatar-container {
-            position: relative;
             width: 300px;
             height: 300px;
         }
-
         .avatar {
             width: 100%;
             height: 100%;
@@ -340,26 +268,125 @@
             box-shadow: 0 30px 60px rgba(99,102,241,0.25);
             transition: var(--transition);
         }
-
         .avatar:hover {
             transform: scale(1.03);
-            box-shadow: 0 40px 80px rgba(99,102,241,0.35);
         }
 
-        /* Section Styles */
+        /* ============================================
+           EDUCATION SECTION (Dark Theme)
+        ============================================ */
+        #education {
+            background: #0d0d0d;
+            position: relative;
+        }
+        .edu-section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        .edu-top {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: flex-end;
+            margin-bottom: 4rem;
+            padding-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+        .edu-label {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(6,182,212,0.3));
+            color: #a5b4fc;
+            padding: 0.4rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 1.2rem;
+        }
+        .edu-top-left h2 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3.2rem, 6vw, 5.5rem);
+            color: #ffffff;
+        }
+        .edu-top-right p {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.9;
+        }
+        .edu-blocks {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.2rem;
+        }
+        .edu-block {
+            position: relative;
+            padding: 2.5rem;
+            border-radius: 14px;
+            transition: transform 0.35s ease;
+        }
+        .edu-block:hover { transform: translateY(-6px); }
+        .edu-block.eb-indigo { background: #6366f1; }
+        .edu-block.eb-cyan { background: #0891b2; }
+        .edu-block.eb-amber { background: #b45309; }
+        .edu-block.eb-dark { background: #1a1a2e; border: 1px solid rgba(255,255,255,0.07); }
+        .edu-block.eb-full { grid-column: span 2; }
+        .eb-bg-num {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 10rem;
+            position: absolute;
+            right: 1.5rem;
+            bottom: -2rem;
+            color: rgba(255,255,255,0.09);
+            pointer-events: none;
+        }
+        .edu-block:hover .eb-bg-num { bottom: -0.8rem; }
+        .eb-year {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 1.1rem;
+            display: block;
+        }
+        .eb-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(2rem, 3.5vw, 3rem);
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+        }
+        .edu-block.eb-full .eb-title { font-size: clamp(2.4rem, 5vw, 4.2rem); }
+        .eb-inst {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.62);
+        }
+        .eb-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            background: rgba(255,255,255,0.13);
+            color: #ffffff;
+            padding: 0.35rem 1.1rem;
+            border-radius: 50px;
+            font-size: 0.72rem;
+            margin-top: 1.2rem;
+        }
+        .eb-status-dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #4ade80;
+            animation: pulse 2s infinite;
+        }
+
+        /* ============================================
+           SHARED SECTION STYLES
+        ============================================ */
         .section {
             padding: 5rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            z-index: 1;
         }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
+        .section-header { text-align: center; margin-bottom: 4rem; }
         .section-label {
             display: inline-block;
             background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(6,182,212,0.1));
@@ -368,19 +395,14 @@
             border-radius: 50px;
             font-weight: 600;
             font-size: 0.9rem;
-            letter-spacing: 1px;
-            text-transform: uppercase;
             margin-bottom: 1rem;
         }
-
         .section-title {
             font-size: 2.8rem;
             font-weight: 800;
-            letter-spacing: -0.02em;
             color: var(--text);
             margin-bottom: 1rem;
         }
-
         .section-subtitle {
             color: var(--text-light);
             font-size: 1.1rem;
@@ -388,147 +410,140 @@
             margin: 0 auto;
         }
 
-        /* Timeline - Education */
-        .timeline {
+        /* ============================================
+           WORK SECTION (Light Theme with Timeline)
+        ============================================ */
+        #work {
             position: relative;
-            padding-left: 50px;
-            max-width: 800px;
+            background: linear-gradient(135deg, #f8fafc 0%, #eff6ff 100%);
+            overflow: hidden;
+        }
+        .work-bg-decoration {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+        .work-circle {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            opacity: 0.3;
+        }
+        .work-circle-1 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, var(--primary), transparent);
+            top: -200px;
+            right: -100px;
+            animation: floatWork 20s ease-in-out infinite;
+        }
+        .work-circle-2 {
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, var(--secondary), transparent);
+            bottom: -150px;
+            left: -100px;
+            animation: floatWork 18s ease-in-out infinite reverse;
+        }
+        @keyframes floatWork {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -30px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+        }
+        .work-timeline {
+            position: relative;
+            max-width: 900px;
             margin: 0 auto;
+            padding: 2rem 0;
         }
-
-        .timeline::before {
-            content: '';
+        .timeline-line {
             position: absolute;
-            left: 20px;
+            left: 60px;
             top: 0;
-            height: 100%;
-            width: 3px;
-            background: linear-gradient(180deg, var(--primary), var(--secondary), var(--accent), var(--primary));
-            border-radius: 2px;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 50%, transparent 100%);
+            opacity: 0.3;
         }
-
-        .timeline-item {
+        .work-card-wrapper {
             position: relative;
-            margin-bottom: 2.5rem;
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 1.8rem 2rem;
-            transition: var(--transition);
-            cursor: default;
+            margin-bottom: 3rem;
+            animation: slideInWork 0.6s ease-out forwards;
+            opacity: 0;
+            transform: translateX(-30px);
         }
-
-        .timeline-item:hover {
-            transform: translateX(8px);
-            box-shadow: var(--shadow-xl);
-            border-color: var(--primary);
+        .work-card-wrapper:nth-child(1) { animation-delay: 0.2s; }
+        .work-card-wrapper:nth-child(2) { animation-delay: 0.5s; }
+        @keyframes slideInWork {
+            to { opacity: 1; transform: translateX(0); }
         }
-
-        .timeline-item.current {
-            border-color: var(--primary);
-            background: linear-gradient(135deg, rgba(99,102,241,0.03), rgba(6,182,212,0.03));
-            box-shadow: var(--shadow-lg);
-        }
-
-        .timeline-item::before {
-            content: '';
+        .work-timeline-dot {
             position: absolute;
-            left: -38px;
-            top: 28px;
-            width: 16px;
-            height: 16px;
+            left: 48px;
+            top: 30px;
+            width: 24px;
+            height: 24px;
             background: var(--primary);
             border-radius: 50%;
-            border: 3px solid #eff6ff;
-            box-shadow: 0 0 0 4px rgba(99,102,241,0.2);
-            transition: var(--transition);
-        }
-
-        .timeline-item.current::before {
-            background: #10b981;
-            box-shadow: 0 0 0 4px rgba(16,185,129,0.2);
-            animation: pulse 2s infinite;
-        }
-
-        .timeline-item .tl-year {
-            display: inline-block;
-            background: var(--surface-alt);
-            color: var(--primary);
-            padding: 0.3rem 1rem;
-            border-radius: 50px;
-            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
             font-size: 0.8rem;
-            letter-spacing: 1px;
-            margin-bottom: 0.5rem;
-            border: 1px solid var(--border);
+            z-index: 2;
+            box-shadow: 0 0 0 4px rgba(99,102,241,0.2);
+            transition: all 0.3s ease;
         }
-
-        .timeline-item.current .tl-year {
-            background: #d1fae5;
-            color: #065f46;
-            border-color: #a7f3d0;
+        .work-card-wrapper:hover .work-timeline-dot {
+            transform: scale(1.2);
+            background: var(--secondary);
         }
-
-        .timeline-item h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 0.2rem;
+        .dot-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: pulseDot 2s ease-in-out infinite;
         }
-
-        .timeline-item .tl-institution {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            font-weight: 500;
+        @keyframes pulseDot {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.5); opacity: 0; }
         }
-
-        .timeline-item .tl-detail {
-            color: var(--text-light);
-            font-size: 0.85rem;
-            margin-top: 0.5rem;
-        }
-
-        .timeline-item .tl-badge {
-            display: inline-block;
-            background: #dbeafe;
-            color: #1e40af;
-            padding: 0.2rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            margin-top: 0.8rem;
-        }
-
-        .timeline-item.current .tl-badge {
-            background: #d1fae5;
-            color: #065f46;
-        }
-
-        /* Work Section */
         .work-card {
             background: var(--surface);
             border-radius: var(--radius);
-            padding: 3rem;
-            border: 1px solid var(--border);
-            display: flex;
-            gap: 2rem;
-            align-items: flex-start;
-            flex-wrap: wrap;
-            transition: var(--transition);
+            margin-left: 100px;
             position: relative;
             overflow: hidden;
-            max-width: 800px;
-            margin: 0 auto;
+            transition: all 0.4s ease;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
-
         .work-card:hover {
+            transform: translateY(-5px);
             box-shadow: var(--shadow-xl);
-            transform: translateY(-4px);
+            border-color: var(--primary);
         }
-
+        .work-card-glow {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(99,102,241,0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        .work-card:hover .work-card-glow { left: 100%; }
+        .work-card-header {
+            display: flex;
+            gap: 1.5rem;
+            padding: 2rem 2rem 1rem;
+            border-bottom: 2px solid var(--border);
+        }
         .work-icon-wrapper {
-            width: 80px;
-            height: 80px;
+            width: 70px;
+            height: 70px;
             border-radius: 20px;
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             display: flex;
@@ -536,50 +551,85 @@
             justify-content: center;
             font-size: 2rem;
             color: white;
-            flex-shrink: 0;
+            transition: all 0.3s ease;
         }
-
-        .work-info {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        .work-info .work-status {
-            display: inline-block;
-            background: #d1fae5;
+        .work-card:hover .work-icon-wrapper { transform: rotate(5deg) scale(1.05); }
+        .work-header-info { flex: 1; }
+        .work-status {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #d1fae5, #a7f3d0);
             color: #065f46;
             padding: 0.3rem 1rem;
             border-radius: 50px;
-            font-weight: 600;
             font-size: 0.8rem;
+            font-weight: 600;
             margin-bottom: 0.8rem;
         }
-
-        .work-info h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 0.3rem;
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
         }
-
-        .work-info .company {
-            font-size: 1.1rem;
+        .work-header-info h3 { font-size: 1.6rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .company {
+            font-size: 1rem;
             color: var(--primary);
             font-weight: 600;
-            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-
-        .work-info .description {
+        .work-year {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--surface-alt);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--primary);
+            height: fit-content;
+        }
+        .work-card-body { padding: 1.5rem 2rem; }
+        .work-description p {
             color: var(--text-light);
             line-height: 1.8;
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 3px solid var(--primary);
         }
-
+        .work-achievements {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+        .achievement-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, #fef3c7, #fde68a);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #92400e;
+            transition: all 0.3s ease;
+        }
+        .achievement-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(245,158,11,0.2);
+        }
         .skill-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
+            gap: 0.6rem;
         }
-
         .skill-tag {
             background: var(--surface-alt);
             color: var(--text);
@@ -588,70 +638,162 @@
             font-size: 0.8rem;
             font-weight: 500;
             border: 1px solid var(--border);
-            transition: var(--transition);
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
         }
-
+        .skill-tag i { font-size: 0.75rem; color: var(--primary); }
         .skill-tag:hover {
             background: var(--primary);
             color: white;
-            border-color: var(--primary);
+            transform: translateY(-2px);
         }
+        .skill-tag:hover i { color: white; }
+        .work-card-footer {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+            border-top: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        .footer-icon { color: var(--primary); font-size: 1rem; animation: pulse 2s infinite; }
+        .future-card {
+            background: linear-gradient(135deg, #f8fafc, #eff6ff);
+            border: 2px dashed var(--border);
+            text-align: center;
+        }
+        .future-content { padding: 2rem; }
+        .future-content i {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: inline-block;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .future-content h4 { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .future-content p { color: var(--text-light); font-size: 0.9rem; }
 
-        /* Certificate Grid */
+        /* ============================================
+           CERTIFICATES SECTION (Dark Glassmorphism)
+        ============================================ */
+        #certificates {
+            position: relative;
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%);
+            overflow: hidden;
+        }
+        .cert-bg-pattern {
+            position: absolute;
+            inset: 0;
+            background-image: 
+                repeating-linear-gradient(45deg, rgba(99,102,241,0.03) 0px, rgba(99,102,241,0.03) 2px, transparent 2px, transparent 8px),
+                repeating-linear-gradient(135deg, rgba(6,182,212,0.03) 0px, rgba(6,182,212,0.03) 2px, transparent 2px, transparent 8px);
+            pointer-events: none;
+        }
+        .cert-bg-shapes {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .shape {
+            position: absolute;
+            background: radial-gradient(circle, rgba(99,102,241,0.15), transparent);
+            border-radius: 50%;
+            filter: blur(60px);
+            animation: floatShape 20s ease-in-out infinite;
+        }
+        .shape-1 { width: 300px; height: 300px; top: 10%; left: -100px; }
+        .shape-2 { width: 400px; height: 400px; bottom: 10%; right: -150px; background: radial-gradient(circle, rgba(6,182,212,0.12), transparent); animation-delay: 3s; }
+        .shape-3 { width: 250px; height: 250px; top: 50%; left: 30%; background: radial-gradient(circle, rgba(245,158,11,0.08), transparent); animation-delay: 6s; }
+        .shape-4 { width: 350px; height: 350px; bottom: 20%; left: 20%; background: radial-gradient(circle, rgba(139,92,246,0.1), transparent); animation-delay: 2s; }
+        @keyframes floatShape {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+            33% { transform: translate(30px, -30px) scale(1.1); opacity: 0.7; }
+            66% { transform: translate(-20px, 20px) scale(0.9); opacity: 0.4; }
+        }
         .cert-grid {
+            position: relative;
+            z-index: 2;
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 1.2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
-
         .cert-card {
-            background: var(--surface);
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
             border-radius: var(--radius);
             overflow: hidden;
-            border: 1px solid var(--border);
-            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.4s ease;
             cursor: pointer;
+            position: relative;
         }
-
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        .cert-card:hover::before { left: 100%; }
         .cert-card:hover {
-            transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            background: rgba(255,255,255,0.08);
         }
-
-        .cert-card .cert-img-wrapper {
+        .cert-card::after {
+            content: '🏆';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: rotate(15deg);
+            transition: all 0.3s ease;
+            z-index: 3;
+            pointer-events: none;
+        }
+        .cert-card:hover::after {
+            opacity: 0.8;
+            transform: rotate(0deg) scale(1.1);
+        }
+        .cert-img-wrapper {
             position: relative;
             overflow: hidden;
             aspect-ratio: 4/3;
-            background: linear-gradient(135deg, #f0f9ff, #fef3c7);
+            background: linear-gradient(135deg, rgba(99,102,241,0.2), rgba(6,182,212,0.2));
         }
-
         .cert-card img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
         }
-
-        .cert-card:hover img {
-            transform: scale(1.08);
-        }
-
-        .cert-card .cert-overlay {
+        .cert-card:hover img { transform: scale(1.08); }
+        .cert-overlay {
             position: absolute;
             inset: 0;
-            background: rgba(0,0,0,0.5);
+            background: linear-gradient(135deg, rgba(99,102,241,0.85), rgba(6,182,212,0.85));
             display: flex;
             align-items: center;
             justify-content: center;
             opacity: 0;
-            transition: var(--transition);
+            transition: all 0.3s ease;
         }
-
-        .cert-card:hover .cert-overlay {
-            opacity: 1;
-        }
-
-        .cert-overlay .view-btn {
+        .cert-card:hover .cert-overlay { opacity: 1; }
+        .view-btn {
             background: white;
             color: var(--primary);
             border: none;
@@ -659,32 +801,71 @@
             border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            font-size: 0.85rem;
-            transition: var(--transition);
+            transform: translateY(20px);
+            opacity: 0;
+            transition: all 0.3s ease;
         }
-
-        .cert-overlay .view-btn:hover {
+        .cert-card:hover .view-btn {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        .view-btn:hover {
             background: var(--primary);
             color: white;
+            transform: scale(1.05);
         }
-
-        .cert-card .cert-info {
+        .cert-info {
             padding: 1.2rem;
+            background: rgba(0,0,0,0.2);
+            border-top: 1px solid rgba(255,255,255,0.1);
         }
-
-        .cert-card .cert-title {
+        .cert-title {
             font-weight: 700;
             font-size: 0.95rem;
+            color: #ffffff;
             margin-bottom: 0.3rem;
-            color: var(--text);
         }
-
-        .cert-card .cert-date {
+        .cert-date {
             font-size: 0.8rem;
-            color: var(--text-light);
+            color: rgba(255,255,255,0.7);
+        }
+        #certificates .section-title,
+        #certificates .section-subtitle { color: #ffffff; }
+        #certificates .section-label {
+            background: linear-gradient(135deg, rgba(99,102,241,0.3), rgba(6,182,212,0.3));
+            color: #a5b4fc;
         }
 
-        /* Modal */
+        /* ============================================
+           CONTACT SECTION
+        ============================================ */
+        .contact-strip {
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .contact-link {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 500;
+        }
+        .contact-link:hover { color: var(--primary); }
+
+        /* ============================================
+           MODAL
+        ============================================ */
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -698,12 +879,10 @@
             transition: var(--transition);
             backdrop-filter: blur(10px);
         }
-
         .modal-overlay.active {
             opacity: 1;
             visibility: visible;
         }
-
         .modal-content {
             background: white;
             border-radius: var(--radius);
@@ -713,78 +892,33 @@
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
-            box-shadow: var(--shadow-xl);
             transform: scale(0.9);
             transition: transform 0.3s ease;
         }
-
-        .modal-overlay.active .modal-content {
-            transform: scale(1);
-        }
-
+        .modal-overlay.active .modal-content { transform: scale(1); }
         .modal-close {
             position: absolute;
             top: 1rem;
             right: 1.5rem;
-            font-size: 1.8rem;
-            cursor: pointer;
-            color: var(--text-light);
-            background: var(--surface-alt);
             width: 40px;
             height: 40px;
             border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            background: var(--surface-alt);
             border: none;
+            cursor: pointer;
+            font-size: 1.5rem;
             transition: var(--transition);
-            z-index: 10;
         }
-
-        .modal-close:hover {
-            background: #fee2e2;
-            color: #dc2626;
-        }
-
+        .modal-close:hover { background: #fee2e2; color: #dc2626; }
         .modal-content img {
             width: 100%;
             border-radius: var(--radius-sm);
             margin-bottom: 1rem;
         }
 
-        /* Contact Strip */
-        .contact-strip {
-            background: var(--surface);
-            border-top: 1px solid var(--border);
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .contact-link {
-            color: var(--text-light);
-            text-decoration: none;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-weight: 500;
-        }
-
-        .contact-link:hover {
-            color: var(--primary);
-        }
-
-        /* Scroll to top */
+        /* ============================================
+           SCROLL TO TOP
+        ============================================ */
         .scroll-top {
             position: fixed;
             bottom: 2rem;
@@ -802,58 +936,34 @@
             z-index: 999;
             opacity: 0;
             visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-
         .scroll-top.visible {
             opacity: 1;
             visibility: visible;
         }
-
         .scroll-top:hover {
             background: var(--primary-dark);
             transform: translateY(-3px);
         }
 
-        /* Responsive */
+        /* ============================================
+           RESPONSIVE
+        ============================================ */
         @media (max-width: 1024px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .hero-stats {
-                justify-content: center;
-            }
-            .hero-visual {
-                order: -1;
-            }
-            .avatar-container {
-                width: 220px;
-                height: 220px;
-            }
-            .avatar {
-                font-size: 3.5rem;
-            }
-            .hero-text h1 {
-                font-size: 2.8rem;
-            }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; }
+            .hero-stats { justify-content: center; }
+            .hero-visual { order: -1; }
+            .avatar-container { width: 220px; height: 220px; margin: 0 auto; }
+            .avatar { font-size: 3.5rem; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .edu-top { grid-template-columns: 1fr; gap: 1.5rem; }
         }
-
         @media (max-width: 768px) {
-            .navbar {
-                border-radius: 25px;
-                padding: 0.7rem 1.5rem;
-                top: 0.5rem;
-                width: 95%;
-            }
+            .navbar { border-radius: 25px; padding: 0.7rem 1.5rem; width: 95%; }
             .nav-links {
                 position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100vh;
+                top: 0; left: 0;
+                width: 100%; height: 100vh;
                 background: rgba(255,255,255,0.98);
                 flex-direction: column;
                 align-items: center;
@@ -861,69 +971,31 @@
                 gap: 1.5rem;
                 transform: translateY(-100%);
                 transition: var(--transition);
-                backdrop-filter: blur(20px);
                 z-index: 1000;
             }
-            .nav-links.active {
-                transform: translateY(0);
-            }
-            .nav-links a {
-                font-size: 1.2rem;
-                padding: 0.8rem 2rem;
-            }
-            .nav-toggle {
-                display: block;
-            }
-            .section-title {
-                font-size: 2rem;
-            }
-            .timeline {
-                padding-left: 40px;
-            }
-            .timeline::before {
-                left: 15px;
-            }
-            .timeline-item::before {
-                left: -33px;
-                width: 14px;
-                height: 14px;
-                top: 24px;
-            }
-            .work-card {
-                padding: 1.5rem;
-            }
-            .cert-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            }
+            .nav-links.active { transform: translateY(0); }
+            .nav-links a { font-size: 1.2rem; padding: 0.8rem 2rem; }
+            .nav-toggle { display: block; }
+            .section-title { font-size: 2rem; }
+            .cert-grid { grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); }
+            .edu-blocks { grid-template-columns: 1fr; }
+            .edu-block.eb-full { grid-column: span 1; }
+            .work-card { margin-left: 60px; }
+            .work-card-header { flex-direction: column; text-align: center; }
+            .work-icon-wrapper { margin: 0 auto; }
+            .work-year { align-self: center; }
+            .work-description p { text-align: center; border-left: none; border-top: 3px solid var(--primary); padding-left: 0; padding-top: 1rem; }
         }
-
         @media (max-width: 480px) {
-            .hero {
-                padding: 7rem 1rem 3rem;
-            }
-            .hero-text h1 {
-                font-size: 2.2rem;
-            }
-            .avatar-container {
-                width: 160px;
-                height: 160px;
-            }
-            .avatar {
-                font-size: 2.8rem;
-            }
-            .section {
-                padding: 3rem 1rem;
-            }
-            .timeline-item {
-                padding: 1.2rem;
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            .navbar, .scroll-top, .loader-wrapper { display: none; }
-            body { background: white; }
-            .section { page-break-inside: avoid; }
+            .hero { padding: 7rem 1rem 3rem; }
+            .hero-text h1 { font-size: 2.2rem; }
+            .avatar-container { width: 160px; height: 160px; }
+            .avatar { font-size: 2.8rem; }
+            .section { padding: 3rem 1rem; }
+            .cert-grid { grid-template-columns: 1fr; }
+            .work-card { margin-left: 40px; }
+            .work-timeline-dot { left: 10px; width: 20px; height: 20px; font-size: 0.7rem; }
+            .timeline-line { left: 20px; }
         }
     </style>
 </head>
@@ -932,10 +1004,8 @@
     <div class="loader-wrapper" id="loader">
         <div class="loader-content">
             <div class="loader-logo">Avie</div>
-            <div class="loader-bar">
-                <div class="loader-bar-fill"></div>
-            </div>
-            <p style="color: #64748b; font-size: 0.9rem;">Memuat portofolio...</p>
+            <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+            <p style="color: #64748b;">Memuat portofolio...</p>
         </div>
     </div>
 
@@ -949,7 +1019,7 @@
             <li><a href="#certificates">Sertifikat</a></li>
             <li><a href="#contact">Kontak</a></li>
         </ul>
-        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <button class="nav-toggle" id="navToggle">
             <span></span><span></span><span></span>
         </button>
     </nav>
@@ -958,98 +1028,122 @@
     <section class="hero" id="home">
         <div class="hero-grid">
             <div class="hero-text">
-                <div class="hero-badge">
-                    <span class="status-dot"></span> Tersedia untuk kolaborasi
-                </div>
-                <h1>
-                    Halo, Saya<br>
-                    <span class="gradient-text">Dzakwan Avie Rahmani</span>
-                </h1>
-                <p class="tagline">
-                    Mahasiswa Sistem Informasi • FTI Semester 4<br>
-                    Universitas La Tansa Mashiro
-                </p>
+                <div class="hero-badge"><span class="status-dot"></span> Tersedia untuk kolaborasi</div>
+                <h1>Halo, Saya<br><span class="gradient-text">Dzakwan Avie Rahmani</span></h1>
+                <p class="tagline">Mahasiswa Sistem Informasi • FTI Semester 4<br>Universitas La Tansa Mashiro</p>
                 <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="4">0</div>
-                        <div class="stat-label">Semester</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="10">0</div>
-                        <div class="stat-label">Sertifikat</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="4">0</div>
-                        <div class="stat-label">Institusi</div>
-                    </div>
+                    <div class="stat-item"><div class="stat-number" data-count="4">0</div><div class="stat-label">Semester</div></div>
+                    <div class="stat-item"><div class="stat-number" data-count="10">0</div><div class="stat-label">Sertifikat</div></div>
+                    <div class="stat-item"><div class="stat-number" data-count="4">0</div><div class="stat-label">Institusi</div></div>
                 </div>
             </div>
             <div class="hero-visual">
-                <div class="avatar-container">
-                    <div class="avatar">DAR</div>
-                </div>
+                <div class="avatar-container"><div class="avatar">DAR</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Education Section - Timeline -->
-    <section class="section" id="education">
-        <div class="section-header">
-            <span class="section-label">🎓 Perjalanan Akademik</span>
-            <h2 class="section-title">Riwayat Pendidikan</h2>
-            <p class="section-subtitle">Perjalanan pendidikan dari tingkat dasar hingga perguruan tinggi</p>
-        </div>
-        <div class="timeline">
-            <div class="timeline-item current">
-                <span class="tl-year">2024 - Sekarang</span>
-                <h3>S1 Sistem Informasi</h3>
-                <p class="tl-institution">Universitas La Tansa Mashiro</p>
-                <p class="tl-detail">Fakultas Teknologi Informasi • Program Studi Sistem Informasi • Semester 4</p>
-                <span class="tl-badge">🏫 Sedang Ditempuh</span>
+    <!-- Education Section -->
+    <section id="education">
+        <div class="edu-section-inner">
+            <div class="edu-top">
+                <div class="edu-top-left">
+                    <span class="edu-label">🎓 Perjalanan Akademik</span>
+                    <h2>Riwayat<br>Pendidikan</h2>
+                </div>
+                <div class="edu-top-right">
+                    <p>Perjalanan pendidikan formal dari tingkat dasar hingga perguruan tinggi, membangun fondasi pengetahuan yang kuat di bidang teknologi informasi dan sistem informasi.</p>
+                </div>
             </div>
-            <div class="timeline-item">
-                <span class="tl-year">2021 - 2024</span>
-                <h3>Sekolah Menengah Kejuruan</h3>
-                <p class="tl-institution">SMKN 1 Rangkasbitung</p>
-            </div>
-            <div class="timeline-item">
-                <span class="tl-year">2018 - 2021</span>
-                <h3>Madrasah Tsanawiyah</h3>
-                <p class="tl-institution">MTs Nurul Khoir Pamarayan</p>
-            </div>
-            <div class="timeline-item">
-                <span class="tl-year">2012 - 2018</span>
-                <h3>Sekolah Dasar</h3>
-                <p class="tl-institution">SDN 08 Muara Ciujung Timur</p>
+            <div class="edu-blocks">
+                <div class="edu-block eb-indigo eb-full">
+                    <span class="eb-year">2024 — Sekarang</span>
+                    <p class="eb-title">S1 Sistem Informasi</p>
+                    <p class="eb-inst">Universitas La Tansa Mashiro · Fakultas Teknologi Informasi · Semester 4</p>
+                    <span class="eb-status"><span class="eb-status-dot"></span> Sedang Ditempuh</span>
+                    <span class="eb-bg-num">01</span>
+                </div>
+                <div class="edu-block eb-cyan">
+                    <span class="eb-year">2021 — 2024</span>
+                    <p class="eb-title">Sekolah Menengah Kejuruan</p>
+                    <p class="eb-inst">SMKN 1 Rangkasbitung</p>
+                    <span class="eb-bg-num">02</span>
+                </div>
+                <div class="edu-block eb-amber">
+                    <span class="eb-year">2018 — 2021</span>
+                    <p class="eb-title">Madrasah Tsanawiyah</p>
+                    <p class="eb-inst">MTs Nurul Khoir Pamarayan</p>
+                    <span class="eb-bg-num">03</span>
+                </div>
+                <div class="edu-block eb-dark eb-full">
+                    <span class="eb-year">2012 — 2018</span>
+                    <p class="eb-title">Sekolah Dasar</p>
+                    <p class="eb-inst">SDN 08 Muara Ciujung Timur</p>
+                    <span class="eb-bg-num" style="font-size: 12rem;">04</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Work Section -->
     <section class="section" id="work">
+        <div class="work-bg-decoration">
+            <div class="work-circle work-circle-1"></div>
+            <div class="work-circle work-circle-2"></div>
+        </div>
         <div class="section-header">
             <span class="section-label">💼 Pengalaman Profesional</span>
             <h2 class="section-title">Riwayat Pekerjaan</h2>
+            <p class="section-subtitle">Perjalanan karir dan pengalaman kerja yang telah dilalui</p>
         </div>
-        <div class="work-card">
-            <div class="work-icon-wrapper">🏛️</div>
-            <div class="work-info">
-                <span class="work-status">● Aktif Bekerja</span>
-                <h3>Operator / Staff Tata Usaha</h3>
-                <p class="company">MTs Nurul Khoir Serang</p>
-                <p class="description">
-                    Bertanggung jawab mengelola administrasi madrasah, mengoperasikan sistem informasi 
-                    akademik, mengelola database siswa dan guru, mengarsipkan dokumen penting, 
-                    menyusun laporan administrasi, serta memastikan kelancaran operasional 
-                    tata usaha sekolah. Berperan aktif dalam digitalisasi administrasi madrasah.
-                </p>
-                <div class="skill-tags">
-                    <span class="skill-tag">Administrasi</span>
-                    <span class="skill-tag">Database Management</span>
-                    <span class="skill-tag">Microsoft Office</span>
-                    <span class="skill-tag">Pengarsipan Digital</span>
-                    <span class="skill-tag">Sistem Informasi</span>
-                    <span class="skill-tag">Manajemen Data</span>
+        <div class="work-timeline">
+            <div class="timeline-line"></div>
+            <div class="work-card-wrapper">
+                <div class="work-timeline-dot"><div class="dot-pulse"></div><i class="fas fa-briefcase"></i></div>
+                <div class="work-card">
+                    <div class="work-card-glow"></div>
+                    <div class="work-card-header">
+                        <div class="work-icon-wrapper"><i class="fas fa-school"></i></div>
+                        <div class="work-header-info">
+                            <span class="work-status"><span class="status-indicator"></span> Aktif Bekerja</span>
+                            <h3>Operator / Staff Tata Usaha</h3>
+                            <p class="company"><i class="fas fa-building"></i> MTs Nurul Khoir Serang</p>
+                        </div>
+                        <div class="work-year"><i class="far fa-calendar-alt"></i> 2024 - Sekarang</div>
+                    </div>
+                    <div class="work-card-body">
+                        <div class="work-description">
+                            <p>Bertanggung jawab mengelola administrasi madrasah, mengoperasikan sistem informasi akademik, mengelola database siswa dan guru, mengarsipkan dokumen penting, menyusun laporan administrasi, serta memastikan kelancaran operasional tata usaha sekolah. Berperan aktif dalam digitalisasi administrasi madrasah.</p>
+                        </div>
+                        <div class="work-achievements">
+                            <div class="achievement-item"><i class="fas fa-trophy"></i><span>Meningkatkan efisiensi administrasi 40%</span></div>
+                            <div class="achievement-item"><i class="fas fa-database"></i><span>Mengelola data 500+ siswa & guru</span></div>
+                            <div class="achievement-item"><i class="fas fa-chart-line"></i><span>Digitalisasi 10+ proses administrasi</span></div>
+                        </div>
+                        <div class="skill-tags">
+                            <span class="skill-tag"><i class="fas fa-check-circle"></i> Administrasi</span>
+                            <span class="skill-tag"><i class="fas fa-database"></i> Database Management</span>
+                            <span class="skill-tag"><i class="fab fa-microsoft"></i> Microsoft Office</span>
+                            <span class="skill-tag"><i class="fas fa-archive"></i> Pengarsipan Digital</span>
+                            <span class="skill-tag"><i class="fas fa-info-circle"></i> Sistem Informasi</span>
+                            <span class="skill-tag"><i class="fas fa-chart-pie"></i> Manajemen Data</span>
+                        </div>
+                    </div>
+                    <div class="work-card-footer">
+                        <div class="footer-icon"><i class="fas fa-certificate"></i></div>
+                        <div class="footer-text">Kontribusi & Pencapaian Terbaik</div>
+                        <div class="footer-icon"><i class="fas fa-award"></i></div>
+                    </div>
+                </div>
+            </div>
+            <div class="work-card-wrapper future">
+                <div class="work-timeline-dot"><i class="fas fa-star"></i></div>
+                <div class="work-card future-card">
+                    <div class="future-content">
+                        <i class="fas fa-rocket"></i>
+                        <h4>Bersiap untuk Pengalaman Berikutnya</h4>
+                        <p>Selalu terbuka untuk peluang dan tantangan baru</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1057,66 +1151,31 @@
 
     <!-- Certificates Section -->
     <section class="section" id="certificates">
+        <div class="cert-bg-pattern"></div>
+        <div class="cert-bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
         <div class="section-header">
             <span class="section-label">🏆 Pencapaian</span>
             <h2 class="section-title">Sertifikat & Penghargaan</h2>
             <p class="section-subtitle">Klik sertifikat untuk melihat lebih detail</p>
         </div>
-        <?php
-        $certificates = [
-            ['title' => 'Web Development Profesional', 'date' => '2024', 'file' => 'serti1.jpg', 'issuer' => 'Digital Academy'],
-            ['title' => 'Database MySQL Lanjutan', 'date' => '2024', 'file' => 'serti2.jpg', 'issuer' => 'Tech Institute'],
-            ['title' => 'UI/UX Design Masterclass', 'date' => '2023', 'file' => 'serti3.jpg', 'issuer' => 'Design School'],
-            ['title' => 'Microsoft Office Specialist', 'date' => '2023', 'file' => 'serti4.jpg', 'issuer' => 'Microsoft'],
-            ['title' => 'Administrasi Perkantoran Modern', 'date' => '2024', 'file' => 'serti5.jpg', 'issuer' => 'LPK Prima'],
-            ['title' => 'Jaringan Komputer Dasar', 'date' => '2023', 'file' => 'serti6.jpg', 'issuer' => 'Cisco Academy'],
-            ['title' => 'Pemrograman PHP & Laravel', 'date' => '2024', 'file' => 'serti7.jpg', 'issuer' => 'Coding Bootcamp'],
-            ['title' => 'Data Analytics Fundamental', 'date' => '2024', 'file' => 'serti8.jpg', 'issuer' => 'Google Career'],
-            ['title' => 'Cyber Security Awareness', 'date' => '2023', 'file' => 'serti9.jpg', 'issuer' => 'Cyber Academy'],
-            ['title' => 'Manajemen Proyek IT', 'date' => '2024', 'file' => 'serti10.jpg', 'issuer' => 'PMI Chapter']
-        ];
-        ?>
-        <div class="cert-grid">
-            <?php foreach ($certificates as $index => $cert): ?>
-            <div class="cert-card" onclick="openModal('<?php echo $cert['file']; ?>', '<?php echo addslashes($cert['title']); ?>', '<?php echo addslashes($cert['issuer']); ?>', '<?php echo $cert['date']; ?>')">
-                <div class="cert-img-wrapper">
-                    <img src="<?php echo $cert['file']; ?>" 
-                         alt="<?php echo $cert['title']; ?>" 
-                         loading="lazy"
-                         onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22><rect fill=%22%23f0f9ff%22 width=%22400%22 height=%22300%22/><text fill=%22%236366f1%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22 font-weight=%22600%22>📜 Sertifikat <?php echo $index + 1; ?></text><text fill=%22%2394a3b8%22 x=%2250%25%22 y=%2262%25%22 text-anchor=%22middle%22 font-size=%2212%22>Upload serti<?php echo $index + 1; ?>.jpg</text></svg>';">
-                    <div class="cert-overlay">
-                        <button class="view-btn">🔍 Lihat Detail</button>
-                    </div>
-                </div>
-                <div class="cert-info">
-                    <p class="cert-title"><?php echo $cert['title']; ?></p>
-                    <p class="cert-date">📅 <?php echo $cert['date']; ?> • <?php echo $cert['issuer']; ?></p>
-                </div>
-            </div>
-            <?php endforeach; ?>
-        </div>
+        <div class="cert-grid" id="certGrid"></div>
     </section>
 
     <!-- Contact Section -->
     <section class="contact-strip" id="contact">
         <h3 style="font-size: 1.5rem; font-weight: 700;">Hubungi Saya</h3>
         <div class="contact-links">
-            <a href="mailto:dzakwanavie@gmail.com" class="contact-link">
-                <i class="fas fa-envelope"></i> dzakwanavie@gmail.com
-            </a>
-            <a href="#" class="contact-link">
-                <i class="fab fa-linkedin"></i> LinkedIn
-            </a>
-            <a href="#" class="contact-link">
-                <i class="fab fa-github"></i> GitHub
-            </a>
-            <a href="#" class="contact-link">
-                <i class="fab fa-instagram"></i> Instagram
-            </a>
+            <a href="mailto:dzakwanavie@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> dzakwanavie@gmail.com</a>
+            <a href="#" class="contact-link" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <a href="#" class="contact-link" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="contact-link" target="_blank"><i class="fab fa-instagram"></i> Instagram</a>
         </div>
-        <p style="color: #94a3b8; margin-top: 1.5rem; font-size: 0.9rem;">
-            © <?php echo date('Y'); ?> Dzakwan Avie Rahmani — Sistem Informasi FTI La Tansa Mashiro
-        </p>
+        <p style="color: #94a3b8; margin-top: 1.5rem;">© 2025 Dzakwan Avie Rahmani — Sistem Informasi FTI La Tansa Mashiro</p>
     </section>
 
     <!-- Modal -->
@@ -1124,7 +1183,7 @@
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal()">✕</button>
             <img src="" alt="Sertifikat" id="modalImage">
-            <h3 id="modalTitle" style="font-weight: 700; margin-bottom: 0.3rem;"></h3>
+            <h3 id="modalTitle"></h3>
             <p id="modalInfo" style="color: #64748b;"></p>
         </div>
     </div>
@@ -1133,118 +1192,159 @@
     <button class="scroll-top" id="scrollTop" title="Kembali ke atas">↑</button>
 
     <script>
-        // Loading
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 1000);
-            startCountAnimation();
-        });
+        // Data Sertifikat
+        const certificates = [
+            { title: 'HUAWEI ACADEMY', date: '2025', file: 'serti1.jpg', issuer: 'Computer Network' },
+            { title: 'HUAWEI ACADEMY', date: '2025', file: 'serti2.jpg', issuer: 'General Knowledge of Computer Networks' },
+            { title: 'HUAWEI ACADEMY', date: '2025', file: 'serti3.jpg', issuer: 'Computer Networks(CRA Training Program)' },
+            { title: 'Cerdas Cermat', date: '2017', file: 'serti4.jpg', issuer: 'HARI KARTINI' },
+            { title: 'PKKMB', date: '2024', file: 'serti5.jpg', issuer: 'PENGENALAN UNIVERSITAS LA TANSA MASHIRO' },
+            { title: 'Webinar', date: '2023', file: 'serti6.jpg', issuer: ' Dasar Dasar Pengujian Perangkat Lunak (Software Tester)' },
+            { title: 'Unicohsem', date: '2025', file: 'serti7.jpg', issuer: 'Envisioning The Ideal Leader For Indonesian Golden Era 2045' },
+            { title: 'Data Analytics Fundamental', date: '2024', file: 'serti8.jpg', issuer: 'Google Career' },
+            { title: 'Cyber Security Awareness', date: '2023', file: 'serti9.jpg', issuer: 'Cyber Academy' },
+            { title: 'Manajemen Proyek IT', date: '2024', file: 'serti10.jpg', issuer: 'PMI Chapter' }
+        ];
 
-        // Navbar scroll effect
-        window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            const scrollTop = document.getElementById('scrollTop');
-            
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-                scrollTop.classList.add('visible');
-            } else {
-                navbar.classList.remove('scrolled');
-                scrollTop.classList.remove('visible');
-            }
-        });
+        function escapeHtml(text) {
+            const div = document.createElement('div');
+            div.textContent = text;
+            return div.innerHTML;
+        }
 
-        // Mobile nav toggle
-        const navToggle = document.getElementById('navToggle');
-        const navLinks = document.getElementById('navLinks');
-        
-        navToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // Active nav link
-        const sections = document.querySelectorAll('section, .hero');
-        const navItems = document.querySelectorAll('.nav-links a');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                if (window.scrollY >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
-            navItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href') === '#' + current) {
-                    item.classList.add('active');
-                }
-            });
-        });
-
-        // Counter animation
-        function startCountAnimation() {
-            const counters = document.querySelectorAll('.stat-number');
-            counters.forEach(counter => {
-                const target = parseInt(counter.getAttribute('data-count'));
-                const duration = 2000;
-                const step = target / (duration / 16);
-                let current = 0;
-                
-                const updateCounter = () => {
-                    current += step;
-                    if (current < target) {
-                        counter.textContent = Math.floor(current);
-                        requestAnimationFrame(updateCounter);
-                    } else {
-                        counter.textContent = target;
-                    }
-                };
-                updateCounter();
+        function renderCertificates() {
+            const certGrid = document.getElementById('certGrid');
+            if (!certGrid) return;
+            certGrid.innerHTML = '';
+            certificates.forEach((cert, index) => {
+                const card = document.createElement('div');
+                card.className = 'cert-card';
+                card.onclick = () => openModal(cert.file, cert.title, cert.issuer, cert.date);
+                card.innerHTML = `
+                    <div class="cert-img-wrapper">
+                        <img src="${cert.file}" alt="${cert.title}" loading="lazy"
+                            onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0f9ff%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%236366f1%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2216%22%3E📜 Sertifikat ${index + 1}%3C/text%3E%3C/svg%3E';">
+                        <div class="cert-overlay"><button class="view-btn">🔍 Lihat Detail</button></div>
+                    </div>
+                    <div class="cert-info">
+                        <p class="cert-title">${escapeHtml(cert.title)}</p>
+                        <p class="cert-date">📅 ${cert.date} • ${escapeHtml(cert.issuer)}</p>
+                    </div>
+                `;
+                certGrid.appendChild(card);
             });
         }
 
-        // Modal functions
+        // Modal Functions
         function openModal(imageSrc, title, issuer, date) {
             const modal = document.getElementById('certModal');
             const modalImage = document.getElementById('modalImage');
             const modalTitle = document.getElementById('modalTitle');
             const modalInfo = document.getElementById('modalInfo');
-            
-            modalImage.src = imageSrc;
-            modalImage.onerror = function() {
-                this.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400"><rect fill="%23f0f9ff" width="600" height="400"/><text fill="%236366f1" x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-size="18" font-weight="600">📜 Sertifikat belum diupload</text></svg>';
-            };
-            modalTitle.textContent = title;
-            modalInfo.textContent = 'Diterbitkan oleh: ' + issuer + ' • ' + date;
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            if (modalImage) {
+                modalImage.src = imageSrc;
+                modalImage.onerror = function() {
+                    this.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="600" height="400"%3E%3Crect fill="%23f0f9ff" width="600" height="400"/%3E%3Ctext fill="%236366f1" x="50%25" y="50%25" text-anchor="middle" dy=".3em" font-size="18"%3E📜 Sertifikat belum diupload%3C/text%3E%3C/svg%3E';
+                };
+            }
+            if (modalTitle) modalTitle.textContent = title;
+            if (modalInfo) modalInfo.textContent = `Diterbitkan oleh: ${issuer} • ${date}`;
+            if (modal) {
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         function closeModal() {
             const modal = document.getElementById('certModal');
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
+            if (modal) {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            }
         }
 
-        document.getElementById('certModal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
+        // Counter Animation
+        function startCountAnimation() {
+            const counters = document.querySelectorAll('.stat-number');
+            counters.forEach(counter => {
+                const target = parseInt(counter.dataset.count);
+                if (isNaN(target)) return;
+                let current = 0;
+                const step = target / 125;
+                const update = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current);
+                        requestAnimationFrame(update);
+                    } else {
+                        counter.textContent = target;
+                    }
+                };
+                update();
+            });
+        }
 
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') closeModal();
-        });
+        // DOM Ready
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCertificates();
+            window.openModal = openModal;
+            window.closeModal = closeModal;
 
-        // Scroll to top
-        document.getElementById('scrollTop').addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Loading
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    const loader = document.getElementById('loader');
+                    if (loader) loader.classList.add('hidden');
+                }, 1000);
+                startCountAnimation();
+            });
+
+            // Navbar Scroll
+            window.addEventListener('scroll', () => {
+                const navbar = document.getElementById('navbar');
+                const scrollTop = document.getElementById('scrollTop');
+                if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+                if (scrollTop) scrollTop.classList.toggle('visible', window.scrollY > 300);
+            });
+
+            // Mobile Nav Toggle
+            const navToggle = document.getElementById('navToggle');
+            const navLinks = document.getElementById('navLinks');
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => navLinks.classList.toggle('active'));
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => navLinks.classList.remove('active'));
+                });
+            }
+
+            // Active Nav Link
+            const sections = document.querySelectorAll('section, .hero');
+            const navItems = document.querySelectorAll('.nav-links a');
+            window.addEventListener('scroll', () => {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100;
+                    const id = section.getAttribute('id');
+                    if (window.scrollY >= sectionTop && id) current = id;
+                });
+                navItems.forEach(item => {
+                    item.classList.remove('active');
+                    if (item.getAttribute('href') === '#' + current) item.classList.add('active');
+                });
+            });
+
+            // Modal Close Events
+            const certModal = document.getElementById('certModal');
+            if (certModal) {
+                certModal.addEventListener('click', e => { if (e.target === certModal) closeModal(); });
+            }
+            document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+            // Scroll Top
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTopBtn) {
+                scrollTopBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            }
         });
     </script>
 </body>
